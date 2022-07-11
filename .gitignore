@@ -21,3 +21,9 @@ var/
 
 # IDE
 .vscode/
+
+# Virtual Environment
+.venv
+
+# Tools
+.pytest_cache
