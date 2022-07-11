@@ -1,10 +1,10 @@
 import json
 
-from src.robots.repository.robots_repository import RobotsRepository
+from robots.service.robot_service import RobotService
 from src.robots.usecase.get_all_robots_use_case import GetAllRobotsUseCase
 
-robots_repository = RobotsRepository()
-use_case = GetAllRobotsUseCase(robots_repository)
+robots_service = RobotService()
+use_case = GetAllRobotsUseCase(robots_service)
 
 
 def invoke(event, context):

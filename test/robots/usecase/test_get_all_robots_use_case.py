@@ -1,6 +1,6 @@
 from unittest.mock import MagicMock
 from src.robots.model.robots import Robots
-from src.robots.repository.robots_repository import RobotsRepository
+from src.robots.service.robot_service import RobotService
 from src.robots.usecase.get_all_robots_use_case import GetAllRobotsUseCase
 
 
@@ -21,13 +21,13 @@ def test_get_all_robots():
     ]
     robots = Robots.from_data(data)
     
-    robot_repository = RobotsRepository()
-    robot_repository.get_all = MagicMock(return_value=robots)
+    robot_service = RobotService()
+    robot_service.get_all = MagicMock(return_value=robots)
     
-    use_case = GetAllRobotsUseCase(robot_repository)
+    use_case = GetAllRobotsUseCase(robot_service)
     
     result = use_case()
     
     assert result == robots
-    robot_repository.get_all.assert_called_once()
+    robot_service.get_all.assert_called_once()
     

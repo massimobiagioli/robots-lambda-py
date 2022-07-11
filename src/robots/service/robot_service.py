@@ -1,8 +1,7 @@
-from src.robots.model.robot import Robot
 from src.robots.model.robots import Robots
 
 
-class RobotsRepository:
+class RobotService:
     def get_all(self):
         return Robots.from_data([
             {
