@@ -1,4 +1,4 @@
-.PHONY: default test
+.PHONY: default test lint deploy logs
 default: help ;
 
 help:				## Show this help.
@@ -9,3 +9,9 @@ test: 				## Test
 
 lint: 				## Lint
 	python -m pyflakes src test
+
+deploy: 			## Deploy
+	sls deploy
+
+logs: 				## Show logs
+	sls -f get_all_robots logs
